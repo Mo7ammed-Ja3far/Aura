@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import "tailwindcss";
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -49,11 +50,14 @@
 body {
   font-family: var(--outfit);
 }
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
 ul {
   list-style: none;
+}
+@theme {
+  --color-primary: #5f6fff;
+  --color-alter: #e2e5ff;
+  --color-hr: #adadad;
+  --color-fs: #4b5563;
+  --color-fl: #1f2937;
 }
