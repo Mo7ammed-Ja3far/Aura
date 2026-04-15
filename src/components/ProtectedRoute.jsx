@@ -1,10 +1,16 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 const ProtectedRoute = () => {
-  const token = localStorage.getItem("token");
+  const { userInfo, loading } = useSelector((state) => state.auth);
+  const location = useLocation();
 
-  if (!token) {
-    return <Navigate to="/login" replace />;
+  if (loading) {
+    return <div>Loading...</div>; // أو Spinner شيك
+  }
+
+  if (!userInfo) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
   return <Outlet />;
