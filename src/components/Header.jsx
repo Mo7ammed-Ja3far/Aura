@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom"; // غيرنا Link لـ NavLink
 function Header() {
   const navList = [
     { name: "home", key: "home", link: "/" },
-    { name: "all doctors", key: "all-doctors", link: "/doctors" },
+    { name: "all doctors", key: "all-doctors", link: "/appointment" },
     { name: "about", key: "about", link: "/about" },
     { name: "contact", key: "contact", link: "/contact" },
   ];
