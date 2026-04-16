@@ -154,7 +154,7 @@ function Appointment() {
           </Grid>
         </Grid>
         <Paper elevation={0} sx={{ borderRadius: 6, p: { xs: 3, sm: 5 }, marginLeft: { xs: 0, md: 8 } }}>
-          <Stack spacing={4}>
+          <Stack spacing={4} sx={{ pl: { md: 36 } }}>
             <Typography variant="h6" sx={{ fontWeight: 500 , fontSize: "1rem",letterSpacing: "0.5px", color: "#565656"}}>
               Booking slots
             </Typography>
@@ -164,14 +164,14 @@ function Appointment() {
                   key={slot.date}
                   variant={slot.active ? "contained" : "outlined"}
                   sx={{
-                    minWidth: 104,
+                    minWidth: 80,
                     borderRadius: 17,
                     py: 6,
                     px: 0,
                     flexDirection: "column",
                     fontSize: 14,
-                    borderColor: slot.active ? "primary.main" : "divider",
-                    bgcolor: slot.active ? "primary.main" : "background.paper",
+                    borderColor: slot.active ? "#5f6fff" : "divider",
+                    bgcolor: slot.active ? "#5f6fff" : "background.paper",
                     color: slot.active ? "common.white" : "text.primary",
                     boxShadow: slot.active ? "0 18px 45px -20px rgba(95,111,255,0.8)" : "none",
                     textTransform: "none",
@@ -193,13 +193,13 @@ function Appointment() {
                   key={slot.label}
                   variant={slot.active ? "contained" : "outlined"}
                   sx={{
-                    minWidth: 104,
+                    minWidth: 10,
                     borderRadius: 10,
                     py: 1.5,
-                    px: 2.5,
+                    px: 1,
                     textTransform: "none",
-                    borderColor: slot.active ? "primary.main" : "divider",
-                    bgcolor: slot.active ? "primary.main" : "background.paper",
+                    borderColor: slot.active ? "#5f6fff" : "divider",
+                    bgcolor: slot.active ? "#5f6fff" : "background.paper",
                     color: slot.active ? "common.white" : "text.secondary",
                     borderWidth: slot.active ? 0 : 2,
                   }}
@@ -208,7 +208,7 @@ function Appointment() {
                 </Button>
               ))}
             </Box>
-            <Button variant="contained" size="large" sx={{ borderRadius: 10, alignSelf: "flex-start", px: 6, py: 1.6, fontSize: 14 }}>
+            <Button variant="contained" size="large" sx={{ borderRadius: 10, alignSelf: "flex-start", px: 6, py: 1.6, fontSize: 14,bgcolor: "#5f6fff" }}>
               Book an appointment
             </Button>
           </Stack>
