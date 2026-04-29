@@ -1,7 +1,42 @@
 import React from "react";
 import sm from "../assets/group_profiles.png";
 import mainImg from "../assets/doc-header-img.png";
+import mainImgSpeciality from "../assets/General_physician.png";
+import Title from "../components/homeComponents/title";
 function Home() {
+  const Speciality = [
+    {
+      id: 1,
+      name: "General physician",
+      img: mainImgSpeciality,
+    },
+    {
+      id: 2,
+      name: "Gynecologist",
+      img: mainImgSpeciality,
+    },
+    {
+      id: 3,
+      name: "Dermatologist",
+      img: mainImgSpeciality,
+    },
+    {
+      id: 4,
+      name: "Pediatricians",
+      img: mainImgSpeciality,
+    },
+    {
+      id: 5,
+      name: "Neurologist",
+      img: mainImgSpeciality,
+    },
+    {
+      id: 6,
+      name: "Gastroenterologist",
+      img: mainImgSpeciality,
+    },
+  ];
+
   return (
     <>
       <div className="bg-primary max-w-[1525px] h-[698px] mx-auto rounded-[10px] mt-[25px] flex items-end ">
@@ -41,6 +76,25 @@ function Home() {
         <img src={mainImg} className="w-[882px]" alt="main img" />
         {/* <div className="mainImg">
         </div> */}
+      </div>
+      <Title
+        title="Find by Speciality"
+        paragraph="Simply browse through our extensive list of trusted doctors, schedule your appointment hassle-free."
+      />
+      <div className="Speciality mt-17.5">
+        <ul className="flex gap-8.75 items-center justify-center ">
+          {Speciality.map((spec) => {
+            return (
+              <li
+                key={spec.id}
+                className="  flex flex-col justify-between items-center text-center gap-5"
+              >
+                <img src={spec.img} alt={spec.name} />
+                <p>{spec.name}</p>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </>
   );
