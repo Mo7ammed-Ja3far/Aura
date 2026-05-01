@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://aure-api.runasp.net/swagger/index.html",
+  baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:5173",
   headers: {
     "Content-Type": "application/json",
   },
@@ -26,7 +26,7 @@ api.interceptors.response.use(
   },
   (error) => {
     if (error.response && error.response.status === 401) {
-      console.error("التوكن انتهت صلاحيته، جاري تسجيل الخروج...");
+      console.error("Session expired, logging out...");
       localStorage.removeItem("token");
       window.location.href = "/login";
     }
@@ -34,5 +34,9 @@ api.interceptors.response.use(
     return Promise.reject(error);
   },
 );
+
+if (import.meta.env.VITE_USE_MOCK_API === 'true') {
+  import('./mockAdapter');
+}
 
 export default api;
